@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: github-tests-nodejs-wlkhhscy-gitops
+  description: This is GitOps manifest for github-tests-nodejs-wlkhhscy   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=github-tests-nodejs-wlkhhscy
+    backstage.io/kubernetes-id: github-tests-nodejs-wlkhhscy 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: github-tests-nodejs-wlkhhscy
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:github-tests-nodejs-wlkhhscy
